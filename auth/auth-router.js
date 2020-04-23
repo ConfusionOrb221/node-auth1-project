@@ -12,7 +12,7 @@ router.post("/register", (req, res) => {
 
     Users.add(user)
     .then(saved =>{
-        res.status(201).json({saved});
+        res.status(201).json({username: saved.username});
     })
     .catch(err =>{
         res.status(500).json({message: 'problem with the db', error: err})
